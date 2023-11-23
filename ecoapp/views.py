@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect, get_object_or_404
-from ecoapp.models import Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners
+from ecoapp.models import Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners,Slides
 from django.urls import translate_url
 from django.db.models import Q,F,FloatField,Count
 from django.db.models.functions import Coalesce
@@ -8,6 +8,9 @@ from django.http import JsonResponse
 from django.db.models import Count
 from django.conf import settings
 from django.db.models import F
+from django.http import JsonResponse
+import json
+from ecoapp.forms import Messageform
 def set_language(request, lang_code):
     url = request.META.get("HTTP_REFERER", None)
     if lang_code == 'az':
@@ -27,6 +30,7 @@ def home(request):
     partners = Partners.objects.all()
     products = Product.objects.annotate(result=F('price') - F('discount_price'))
     categories = Category.objects.all()
+    slides = Slides.objects.all()
     context = {
         'products':products,
         'headers':headers,
@@ -34,10 +38,63 @@ def home(request):
         'about':about,
         'icons':icons,
         'partners':partners,
-        'categories':categories
+        'categories':categories,
+        'slides':slides
     }
     return render(request,'index.html',context)
 
-def account(request):
+def shop(request):
+    products = Product.objects.annotate(result=F('price') - F('discount_price'))
+    categories = Category.objects.all()
+    context = {'products':products,'categories':categories,}
+    return render(request,'Shop.html',context)
+
+def about(request):
+    icons = HomeIcons.objects.all()
+    partners = Partners.objects.all()
+    context = {
+        'icons':icons,
+        'partners':partners,
+
+    }
+    return render(request,'about.html',context)
+
+def contact(request):
     context = {}
-    return render(request,'Account.html',context)
+    return render(request,'contact.html',context)
+
+def blog(request):
+    blogs = Blog.objects.all()
+
+
+    paginator = Paginator(blogs, 12)
+    page = request.GET.get("page", 1)
+    blog_list = paginator.get_page(page)
+    page_count = paginator.num_pages
+    page_count = [x+1 for x in range(page_count)]
+    context = {
+        'blogs':blog_list,
+        'count':page_count
+    }
+    return render(request,'Blog.html',context)
+
+def message(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        newmessage = Messageform(data=data)
+        if data.get('message') == '':
+            return HttpResponse(status=401)
+    
+        if data.get('name') == '':
+            return HttpResponse(status=404)
+        if data.get('email') == '':
+            return HttpResponse(status=405)
+        if newmessage.is_valid():
+            newmessage.save()
+        else:
+            return HttpResponse(status=405) 
+        data = {'message': 'Data saved successfully'}
+        return JsonResponse(data)
+    else:
+        return HttpResponse(status=405) 

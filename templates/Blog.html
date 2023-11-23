@@ -1,4 +1,6 @@
-<!DOCTYPE html><html class="no-js" lang="en"><head>
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="en"><head>
     <meta charset="utf-8">
     <title>Nest - Multipurpose eCommerce HTML Template</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,10 +11,10 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.svg' %}">
     <!-- Template CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
@@ -22,72 +24,46 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="#"><img src="images/logo.svg" alt="logo"></a>
+                        <a href="#"><img src="{% static 'logo_black.svg' %}" alt="logo"></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-2">
                             <form action="#">
                                 <select class="select-active">
-                                    <option>All Categories</option>
-                                    <option>Milks and Dairies</option>
-                                    <option>Wines &amp; Alcohol</option>
-                                    <option>Clothing &amp; Beauty</option>
-                                    <option>Pet Foods &amp; Toy</option>
-                                    <option>Fast food</option>
-                                    <option>Baking material</option>
-                                    <option>Vegetables</option>
-                                    <option>Fresh Seafood</option>
-                                    <option>Noodles &amp; Rice</option>
-                                    <option>Ice cream</option>
+                                    <option>Bütün kateqorilər</option>
+                                    {% for category in categories %}
+                                    <option>{{ category.name }}</option>
+                                    {% endfor %}
                                 </select>
-                                <input type="text" placeholder="Search for items...">
+                                <input type="text" placeholder="Məhsullarda axtar">
                             </form>
                         </div>
                         <div class="header-action-right">
                             <div class="header-action-2" id="header-action-23">
-                                <div class="search-location">
-                                    <form action="#">
-                                        <select class="select-active">
-                                            <option>Your Location</option>
-                                            <option>Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>Arizona</option>
-                                            <option>Delaware</option>
-                                            <option>Florida</option>
-                                            <option>Georgia</option>
-                                            <option>Hawaii</option>
-                                            <option>Indiana</option>
-                                            <option>Maryland</option>
-                                            <option>Nevada</option>
-                                            <option>New Jersey</option>
-                                            <option>New Mexico</option>
-                                            <option>New York</option>
-                                        </select>
-                                    </form>
-                                </div>
+                      
 
                                 <div class="header-action-icon-2">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="images/icon-heart.svg">
-                                        <span class="pro-count blue">6</span>
+                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                        <span class="pro-count blue">0</span>
                                     </a>
-                                    <a href="#"><span class="lable">Wishlist</span></a>
+                                    <a href="#"><span class="lable">Favorilər</span></a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="#">
-                                        <img alt="Nest" src="images/icon-cart.svg">
-                                        <span class="pro-count blue">2</span>
+                                        <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                        <span class="pro-count blue">0</span>
                                     </a>
-                                    <a href="#"><span class="lable">Cart</span></a>
+                                    <a href="#"><span class="lable">Səbət</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                         <ul>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="images/thumbnail-3.jpg"></a>
+                                                    <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Daisy Casual Bag</a></h4>
-                                                    <h4><span>1 × </span>$800.00</h4>
+                                                    <h4><a href="#">Məhsul 1</a></h4>
+                                                    <h4><span>1 × </span>20.00 azn</h4>
                                                 </div>
                                                 <div class="shopping-cart-delete">
                                                     <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -95,11 +71,11 @@
                                             </li>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="images/thumbnail-2.jpg"></a>
+                                                    <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Corduroy Shirts</a></h4>
-                                                    <h4><span>1 × </span>$3200.00</h4>
+                                                    <h4><a href="#">Məhsul 2</a></h4>
+                                                    <h4><span>1 × </span>40.00 azn</h4>
                                                 </div>
                                                 <div class="shopping-cart-delete">
                                                     <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -108,40 +84,35 @@
                                         </ul>
                                         <div class="shopping-cart-footer">
                                             <div class="shopping-cart-total">
-                                                <h4>Total <span>$4000.00</span></h4>
+                                                <h4>Cəm <span>60.00 azn</span></h4>
                                             </div>
                                             <div class="shopping-cart-button">
-                                                <a href="#" class="outline">View cart</a>
-                                                <a href="#">Checkout</a>
+                                                <a href="#" class="outline">Səbətə bax</a>
+                                                <a href="#">Rəsmiləşdir</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="header-action-icon-2 mouse">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="images/icon-user.svg">
+                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
                                     </a>
                                     <a href="#"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                                <a href="#"><i class="fi fi-rs-user mr-10"></i>Hesab</a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-location-alt mr-10"></i>Order
-                                                    Tracking</a>
+                                                <a href="#"><i class="fi fi-rs-label mr-10"></i>Sifariş tarixçəsi</a>
                                             </li>
+                                         
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
+                                                <a href="#"><i class="fi fi-rs-heart mr-10"></i>favorilər</a>
                                             </li>
+                                       
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Çıxış</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -156,100 +127,35 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="#"><img src="images/logo.svg" alt="logo"></a>
+                        <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block categories-button-active ">
-                            <a class="categories-button-active open-div" href="#">
-                                <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
-                                <i class="fi-rs-angle-down"></i>
-                            </a>
-                            <div id="myPopup" class="categories-dropdown-wrap categories-dropdown-active-large font-heading popup">
-                                <div class="d-flex categori-dropdown-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="images/category-1.svg" alt="">Milks and Dairies</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-2.svg" alt="">Clothing &amp;
-                                                beauty</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-3.svg" alt="">Pet Foods &amp; Toy</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-4.svg" alt="">Baking material</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-5.svg" alt="">Fresh Fruit</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="end">
-                                        <li>
-                                            <a href="#"> <img src="images/category-6.svg" alt="">Wines &amp; Drinks</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-7.svg" alt="">Fresh Seafood</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-8.svg" alt="">Fast food</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-9.svg" alt="">Vegetables</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-10.svg" alt="">Bread and Juice</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="more_slide_open" style="display: none">
-                                    <div class="d-flex categori-dropdown-inner">
-                                        <ul>
-                                            <li>
-                                                <a href="#"> <img src="images/icon-1.svg" alt="">Milks and Dairies</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <img src="images/icon-2.svg" alt="">Clothing &amp;
-                                                    beauty</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="end">
-                                            <li>
-                                                <a href="#"> <img src="images/icon-3.svg" alt="">Wines &amp; Drinks</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <img src="images/icon-4.svg" alt="">Fresh Seafood</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show
-                                        more...</span></div>
-                            </div>
+                      
                         </div>
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
                                 <ul>
                                     <li>
-                                        <a class="active" href="index.html">Ana Səhifə</a>
+                                        <a  href="{% url 'home' %}">Ana Səhifə</a>
 
                                     </li>
                                     <li>
-                                        <a href="About Us.html">Haqqında</a>
+                                        <a href="{% url 'about' %}">Haqqında</a>
                                     </li>
                                     <li>
-                                        <a href="Shop.html">Məhsullar</a>
-
-                                    </li>
-
-
-                                    <li>
-                                        <a href="Blog.html">Bloq </a>
+                                        <a href="{% url 'shop' %}">Məhsullar</a>
 
                                     </li>
 
+
                                     <li>
-                                        <a href="Contact.html">Əlaqə</a>
+                                        <a class="active" href="{% url 'blog' %}">Bloq </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a href="{% url 'contact' %}">Əlaqə</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -267,24 +173,24 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 <a href="#">
-                                    <img alt="Nest" src="images/icon-heart.svg">
-                                    <span class="pro-count white">4</span>
+                                    <img alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                    <span class="pro-count white">0</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
-                                    <img alt="Nest" src="images/icon-cart.svg">
-                                    <span class="pro-count white">2</span>
+                                    <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                    <span class="pro-count white">0</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="images/thumbnail-3.jpg"></a>
+                                                <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="#">Plain Striola Shirts</a></h4>
-                                                <h3><span>1 × </span>$800.00</h3>
+                                                <h4><a href="#">Məhsul 1</a></h4>
+                                                <h4><span>1 × </span>20.00 azn</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -292,11 +198,11 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="images/thumbnail-4.jpg"></a>
+                                                <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="#">Macbook Pro 2022</a></h4>
-                                                <h3><span>1 × </span>$3500.00</h3>
+                                                <h4><a href="#">Məhsul 2</a></h4>
+                                                <h4><span>1 × </span>40.00 azn</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -305,39 +211,34 @@
                                     </ul>
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
-                                            <h4>Total <span>$383.00</span></h4>
+                                            <h4>Cəm <span>60.00 azn</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="#">View cart</a>
-                                            <a href="#">Checkout</a>
+                                            <a href="#" class="outline">Səbətə bax</a>
+                                            <a href="#">Rəsmiləşdir</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="header-action-icon-2 mouse">
                                 <a href="#">
-                                    <img class="svgInject" alt="Nest" src="images/icon-user.svg">
+                                    <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                            <a href="#"><i class="fi fi-rs-user mr-10"></i>Hesab</a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-location-alt mr-10"></i>Order
-                                                Tracking</a>
+                                            <a href="#"><i class="fi fi-rs-label mr-10"></i>Sifariş tarixçəsi</a>
                                         </li>
+                                     
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
+                                            <a href="#"><i class="fi fi-rs-heart mr-10"></i>favorilər</a>
                                         </li>
+                                   
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                            <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Çıxış</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -352,7 +253,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="#"><img src="images/logo.svg" alt="logo"></a>
+                    <a href="#"><img src="{% static 'logo_black.svg' %}" alt="logo"></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -364,7 +265,7 @@
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input type="text" placeholder="Search for items…">
+                        <input type="text" placeholder="Məhsullarda axtar">
                         <button type="submit"><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -373,25 +274,25 @@
                     <nav>
                         <ul class="mobile-menu font-heading">
                             <li class="menu-item-has-children">
-                                <a href="#">Ana Səhifə</a>
+                                <a href="{% url 'home' %}">Ana Səhifə</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Haqqında</a>
+                                <a href="{% url 'about' %}">Haqqında</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Məhsullar</a>
+                                <a href="{% url 'shop' %}">Məhsullar</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Bloq</a>
+                                <a href="{% url 'blog' %}">Bloq</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Əlaqə</a>
+                                <a href="{% url 'contact' %}">Əlaqə</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="#">Dillər</a>
                                 <ul class="dropdown">
                                     <li><a href="#">English</a></li>
-                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Azerbaijan</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -403,91 +304,19 @@
                         <a href="#"><i class="fi-rs-marker"></i> Our location </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-user"></i>Log In / Sign Up </a>
+                        <a href="#"><i class="fi-rs-user"></i>Baku, Azerbaijan </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
+                        <a href="#"><i class="fi-rs-headphones"></i>(+994) 51 000 00 00 </a>
                     </div>
                 </div>
                 <div class="mobile-social-icon mb-50">
                     <h6 class="mb-15">Follow Us</h6>
-                    <a href="#"><img src="images/icon-facebook-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-twitter-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-instagram-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-pinterest-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-youtube-white.svg" alt=""></a>
-                </div>
-                <div class="site-copyright">Copyright 2022 © Nest. All rights reserved. Powered by AliThemes.</div>
-            </div>
-        </div>
-    </div> <div class="mobile-header-active mobile-header-wrapper-style">
-        <div class="mobile-header-wrapper-inner">
-            <div class="mobile-header-top">
-                <div class="mobile-header-logo">
-                    <a href="#"><img src="images/logo.svg" alt="logo"></a>
-                </div>
-                <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
-                    <button class="close-style search-close">
-                        <i class="icon-top"></i>
-                        <i class="icon-bottom"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="mobile-header-content-area">
-                <div class="mobile-search search-style-3 mobile-header-border">
-                    <form action="#">
-                        <input type="text" placeholder="Search for items…">
-                        <button type="submit"><i class="fi-rs-search"></i></button>
-                    </form>
-                </div>
-                <div class="mobile-menu-wrap mobile-header-border">
-                    <!-- mobile menu start -->
-                    <nav>
-                        <ul class="mobile-menu font-heading">
-                            <li class="menu-item-has-children">
-                                <a href="#">Ana Səhifə</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Haqqında</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Məhsullar</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Bloq</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Əlaqə</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Dillər</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- mobile menu end -->
-                </div>
-                <div class="mobile-header-info-wrap">
-                    <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-marker"></i> Our location </a>
-                    </div>
-                    <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-user"></i>Log In / Sign Up </a>
-                    </div>
-                    <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
-                    </div>
-                </div>
-                <div class="mobile-social-icon mb-50">
-                    <h6 class="mb-15">Follow Us</h6>
-                    <a href="#"><img src="images/icon-facebook-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-twitter-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-instagram-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-pinterest-white.svg" alt=""></a>
-                    <a href="#"><img src="images/icon-youtube-white.svg" alt=""></a>
+                    <a href="#"><img src="{% static 'images/icon-facebook-white.svg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'images/icon-twitter-white.svg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'images/icon-instagram-white.svg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'images/icon-pinterest-white.svg' %}" alt=""></a>
+                    <a href="#"><img src="{% static 'images/icon-youtube-white.svg' %}" alt=""></a>
                 </div>
                 <div><a class="site-copyright" href="https://vrproduction.az/">© VR Production 2023 Bütün hüquqlar qorunur!</a></div>
             </div>
@@ -503,8 +332,7 @@
                         <div style="justify-content: center;display: flex;">
                             
                             <div class="breadcrumb">
-                                <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-                                <span></span> Shop <span></span> Blog
+    
                             </div>
                         </div>
                        
@@ -518,381 +346,53 @@
                     <div class="col-lg-12">
                         <div class="shop-product-fillter mb-50">
                             <div class="totall-product pb-10">
-                                <h2>
-                                    <img class="w-36px mr-10" src="images/category-1.svg" alt="">
-                                    Recips Articles
-                                </h2>
+                          
                             </div>
                         </div>
                         <div class="loop-grid">
                             <div class="row">
+                                {% for blog in blogs %}
                                 <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
                                     <div class="post-thumb">
                                         <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-1.png" alt="">
-                                        </a>
-                                        <div class="entry-meta">
-                                            <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                    class="fi-rs-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The Intermediate Guide to Healthy Food</a>
-                                        </h4>
-                                        <h6  class="mb-10 font-sm "><a class="entry-meta text-muted post-title "
-                                            href="blog-category-grid.html"><span>SalamSalamSalamSalamSalam SalamSalamSalamSalamSal amSalamSalam</span>...</a></h6>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-2.png" alt="">
+                                            <img class="border-radius-15" src="{{blog.image.url}}" alt="">
                                         </a>
                                     </div>
                                     <div class="entry-content-2">
                                         <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Soups and Stews</a></h6>
+                                                href="blog-category-grid.html">{{blog.subject.name}}</a></h6>
                                         <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Summer Quinoa Salad Jars with Lemon Dill</a>
+                                            <a href="blog-post-right.html">{{blog.title}}</a>
                                         </h4>
                                         <div class="entry-meta font-xs color-grey mt-10 pb-10">
                                             <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
+                                                <span class="post-on mr-10">{{blog.created_at}}</span>
+                                                <span class="hit-count has-dot mr-10">{{blog.views}}</span>
 
                                             </div>
                                         </div>
                                     </div>
                                 </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-3.png" alt="">
-                                        </a>
-                                        <div class="entry-meta">
-                                            <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                    class="fi-rs-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Salad</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Caprese Chicken with Smashed Potatoes</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-4.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Dessert</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Harissa Chickpeas with Whipped Feta</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-5.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Breakfast</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Almond Butter Chocolate Chip Zucchini
-                                                Bars</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-6.png" alt="">
-                                        </a>
-                                        <div class="entry-meta">
-                                            <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                    class="fi-rs-picture"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Vegan</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Smoky Beans &amp; Greens Tacos with Aji
-                                                Verde</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-1.png" alt="">
-                                        </a>
-                                        <div class="entry-meta">
-                                            <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                    class="fi-rs-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Side Dish</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The Intermediate Guide to Healthy Food</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-7.png" alt="">
-                                        </a>
-                                        <div class="entry-meta">
-                                            <a class="entry-meta meta-2" href="blog-category-grid.html"><i
-                                                    class="fi-rs-play-alt"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Gluten Free</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Sticky Ginger Rice Bowls with Pickled Veg</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-8.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Side Dish</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Creamy Garlic Sun-Dried Tomato Pasta</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-9.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Dairy Free</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The Absolute Easiest Spinach and Pizza</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-10.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Salad</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Sticky Ginger Rice Bowls with Pickled</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Soups</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The Best Soft Chocolate Chip Cookies</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-12.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Vegetarian</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">Baked Mozzarella Chicken Rolls</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-13.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html"> Dessert </a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The Best Avocado Egg Salad</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-14.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Vegetarian</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The litigants on the screen are not
-                                                actors</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
-                                    <div class="post-thumb">
-                                        <a href="blog-post-right.html">
-                                            <img class="border-radius-15" src="images/blog-15.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="entry-content-2">
-                                        <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">Vegetarian</a></h6>
-                                        <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">The litigants on the screen are not
-                                                actors</a>
-                                        </h4>
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">25 April 2022</span>
-                                                <span class="hit-count has-dot mr-10">126k Views</span>
-                                                <span class="hit-count has-dot">4 mins read</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </article>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
-                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-left"></i></a>
+                                        <a class="page-link" {% if not blogs.has_previous %}
+                                        disabled="true" style="cursor:not-allowed" 
+                                        {% endif %} {% if blogs.has_previous %}
+                                        href="?page={{ blogs.previous_page_number }}{% endif %}><i class="fi-rs-arrow-small-left"></i></a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link dot" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                    {% for c in count %}
+                                    <li class="page-item {% if forloop.counter == blogs.number %} active {% endif %}"><a class="page-link" href="?page={{c}}">{{c}}</a></li>
+                                    {% endfor %}
                                     <li class="page-item">
-                                        <a class="page-link" href="#"><i class="fi-rs-arrow-small-right"></i></a>
+                                        <a class="page-link"{% if not blogs.has_next %}
+                                        disabled="true" style="cursor:not-allowed" 
+                                        {% endif %} {% if blogs.has_next %}
+                                        href="?page={{ blogs.next_page_number }}{% endif %}><i class="fi-rs-arrow-small-right"></i></a>
                                     </li>
                                 </ul>
                             </nav>
@@ -902,29 +402,30 @@
             </div>
         </div>
     </main>
-    <section class="newsletter mb-15 pt-30 pb-30">
+    <section class="newsletter pb-30 pt-30">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="position-relative newsletter-inner">
                         <div class="newsletter-content">
                             <h2 class="mb-20">
-                                Stay home &amp; get your daily <br>
-                                needs from our shop
+                                Some Lorem Text &amp; Dont Spend Time <br>
+                                To read this text
                             </h2>
-                            <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest Mart</span></p>
-                            <form class="form-subcriber d-flex " style="max-width: 173px;">
-                           
-                                <button class="btn" >Alışverişə Başla</button>
+                            <p class="mb-45">Just listen lana del rey <span class="text-brand">and eat ecoproduct</span></p>
+                            <form class="form-subcriber d-flex" style="max-width: 173px;">
+                                <a href="#">
+                                    <button class="btn">Alışverişə Başla</button>
+                                </a>
+
                             </form>
                         </div>
-                        <img src="images/banner-13.png" alt="newsletter">
+                        <img style="max-height:340px" src="{% static 'noimage.jpg' %}" alt="newsletter">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <footer class="main footer_desktop">
 
 
@@ -933,8 +434,8 @@
             <div class="container pt-15 pb-20 pr-30 pl-30" id="mypadding">
                 <div class="row">
                     <div class="logo mb-30 slogan">
-                        <a href="index.html" class="mb-15 "><img src="images/logo.svg" alt="logo"></a>
-                        <p class="font-lg text-heading">Awesome grocery store website template</p>
+                        <a href="#" class="mb-15 "><img style="height:120px;" src="{% static 'logo_white.png' %}" alt="logo"></a>
+                        <p class="font-lg text-heading">Ecoproductla daha sağlam yaşa !</p>
                     </div>
 
                     <div class="footer-link-widget col wow animate__animated animate__fadeInUp">
@@ -946,7 +447,7 @@
 
                                 <iframe class="mapp-my" 
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24313.687103710025!2d49.858787449604726!3d40.38201843056972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d0b5c0c755d%3A0xc0c10a39029757cd!2sDental%20Expert!5e0!3m2!1sen!2saz!4v1697460618706!5m2!1sen!2saz"
-                                    width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
@@ -997,69 +498,13 @@
             </div>
         </div>
     </footer>
-    <footer class="main footer_mobile">
-        <section class="section-padding footer-mid">
-            <div class="container pt-15 pb-20">
-                <div class="row">
-                    <div class="col">
-                        <div class="widget-about font-md mb-md-3 mb-lg-3 mb-xl-0 footer_sec_1">
-                            <div class="logo mb-30 footer_logo">
-                                <a href="#" class="mb-15"><img src="images/logo.svg" alt="logo"></a>
-                                <p class="font-lg text-heading">Awesome grocery store website template</p>
-                            </div>
-                            <iframe class="mapp-my"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24313.687103710025!2d49.858787449604726!3d40.38201843056972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d0b5c0c755d%3A0xc0c10a39029757cd!2sDental%20Expert!5e0!3m2!1sen!2saz!4v1697460618706!5m2!1sen!2saz"
-                                width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                    <div class="footer-link-widget col footer_ul_2">
-                        <h4 class="widget-title mobile_title_footer">LİNKLƏR</h4>
-                        <ul class="footer-list mb-sm-5 mb-md-0 mobile_ul_footer">
-                            <li><a href="#">Ana Səhifə</a></li>
-                            <li><a href="#">Haqqında</a></li>
-                            <li><a href="#">Məhsullar</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Əlaqə</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-link-widget col footer_ul_2">
-                        <h4 class="widget-title ">SOSİAL ŞƏBƏKƏ</h4>
-                        <ul class="footer-list mb-sm-5 mb-md-0 ">
-                            <li><a href="#">İnstagram</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Youtuba</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-link-widget col footer_ul_2">
-                        <h4 class="widget-title mobile_title_footer">BİZİMLƏ ƏLAQƏ</h4>
-                        <ul class="footer-list mb-sm-5 mb-md-0 mobile_ul_footer">
-                            <li><a href="#">nomre:</a></li>
-                            <li><a href="#">nomre:</a></li>
-                            <li><a href="#">email:</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <div class="container pb-30 wow animate__animated animate__fadeInUp" data-wow-delay="0">
-            <div class="row align-items-center">
-                <div class="col-12 mb-30">
-                    <div class="footer-bottom"></div>
-                </div>
-                <div><a href="https://vrproduction.az/">© VR Production 2023 Bütün hüquqlar qorunur!</a></div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="text-center">
-                    <img src="images/loading.gif" alt="">
+                    <img src="{% static 'images/loading.gif' %}" alt="">
                 </div>
             </div>
         </div>
@@ -1082,28 +527,28 @@
     });
     </script>
     <!-- Vendor JS-->
-    <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/modernizr-3.6.0.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/jquery-migrate-3.3.0.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/jquery.syotimer.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/perfect-scrollbar.js"></script>
-    <script src="js/magnific-popup.js"></script>
-    <script src="js/select2.min.js"></script>
-    <script src="js/waypoints.js"></script>
-    <script src="js/counterup.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/images-loaded.js"></script>
-    <script src="js/isotope.js"></script>
-    <script src="js/scrollup.js"></script>
-    <script src="js/jquery.vticker-min.js"></script>
-    <script src="js/jquery.theia.sticky.js"></script>
-    <script src="js/jquery.elevatezoom.js"></script>
+    <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script><script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.3.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/jquery.syotimer.min.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'js/magnific-popup.js' %}"></script>
+    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/counterup.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/images-loaded.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/scrollup.js' %}"></script>
+    <script src="{% static 'js/jquery.vticker-min.js' %}"></script>
+    <script src="{% static 'js/jquery.theia.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
     <!-- Template  JS -->
-    <script src="js/main.js"></script>
-    <script src="js/shop.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/shop.js' %}"></script>
 
 
 </body></html>

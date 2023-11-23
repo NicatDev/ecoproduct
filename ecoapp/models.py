@@ -18,12 +18,17 @@ class BaseMixin(models.Model):
 
 class Subject(models.Model):
     name = models.CharField(max_length=340)
-
+    def __str__(self):
+        return self.name
+    
 class Blog(BaseMixin):
     title = models.CharField(max_length=1200)
     description = models.TextField()
     views = models.SmallIntegerField(default=0)
+    subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True,blank=True)
+    image = models.ImageField(null=True,blank=True)
     
+
     def __str__(self):
         return self.title
     
@@ -64,6 +69,7 @@ class Product(BaseMixin):
     information = models.TextField()
     image = models.ImageField(null=True,blank=True)
     hoverimage = models.ImageField(null=True,blank=True)
+    hot = models.BooleanField(default=False)
     def __str__(self):
         return self.name
         
@@ -134,3 +140,21 @@ class Partners(models.Model):
     
     def __str__(self):
         return self.title
+
+
+class Slides(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField()
+    link = models.CharField(max_length=2050,null=True,blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=600)
+    message = models.TextField()
+    email = models.EmailField()
+    
+    def __str__(self):
+        return self.name + '---'

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html class="no-js" lang="en">
 
 <head>
@@ -12,9 +13,12 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="planet-earth.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'planet-earth.png' %}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--leaflet map-->
     <link rel="stylesheet" href="{% static 'css/leaflet.css' %}" crossorigin="">
@@ -28,72 +32,46 @@
             <div class="container">
                 <div class="header-wrap">
                     <div class="logo logo-width-1">
-                        <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+                        <a href="#"><img src="{% static 'logo_black.svg' %}" alt="logo"></a>
                     </div>
                     <div class="header-right">
                         <div class="search-style-2">
                             <form action="#">
                                 <select class="select-active">
-                                    <option>All Categories</option>
-                                    <option>Milks and Dairies</option>
-                                    <option>Wines &amp; Alcohol</option>
-                                    <option>Clothing &amp; Beauty</option>
-                                    <option>Pet Foods &amp; Toy</option>
-                                    <option>Fast food</option>
-                                    <option>Baking material</option>
-                                    <option>Vegetables</option>
-                                    <option>Fresh Seafood</option>
-                                    <option>Noodles &amp; Rice</option>
-                                    <option>Ice cream</option>
+                                    <option>Bütün kateqorilər</option>
+                                    {% for category in categories %}
+                                    <option>{{ category.name }}</option>
+                                    {% endfor %}
                                 </select>
-                                <input type="text" placeholder="Search for items...">
+                                <input type="text" placeholder="Məhsullarda axtar">
                             </form>
                         </div>
                         <div class="header-action-right">
                             <div class="header-action-2" id="header-action-23">
-                                <div class="search-location">
-                                    <form action="#">
-                                        <select class="select-active">
-                                            <option>Your Location</option>
-                                            <option>Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>Arizona</option>
-                                            <option>Delaware</option>
-                                            <option>Florida</option>
-                                            <option>Georgia</option>
-                                            <option>Hawaii</option>
-                                            <option>Indiana</option>
-                                            <option>Maryland</option>
-                                            <option>Nevada</option>
-                                            <option>New Jersey</option>
-                                            <option>New Mexico</option>
-                                            <option>New York</option>
-                                        </select>
-                                    </form>
-                                </div>
+                      
 
                                 <div class="header-action-icon-2">
                                     <a href="#">
                                         <img class="svgInject" alt="Nest" src="{% static 'images/icon-heart.svg' %}">
-                                        <span class="pro-count blue">6</span>
+                                        <span class="pro-count blue">0</span>
                                     </a>
-                                    <a href="#"><span class="lable">Wishlist</span></a>
+                                    <a href="#"><span class="lable">Favorilər</span></a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="#">
-                                        <img alt="Nest" src="images/icon-cart.svg">
-                                        <span class="pro-count blue">2</span>
+                                        <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                        <span class="pro-count blue">0</span>
                                     </a>
-                                    <a href="#"><span class="lable">Cart</span></a>
+                                    <a href="#"><span class="lable">Səbət</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                         <ul>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'images/thumbnail-3.jpg' %}"></a>
+                                                    <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Daisy Casual Bag</a></h4>
-                                                    <h4><span>1 × </span>$800.00</h4>
+                                                    <h4><a href="#">Məhsul 1</a></h4>
+                                                    <h4><span>1 × </span>20.00 azn</h4>
                                                 </div>
                                                 <div class="shopping-cart-delete">
                                                     <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -101,11 +79,11 @@
                                             </li>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'images/thumbnail-2.jpg' %}"></a>
+                                                    <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
-                                                    <h4><a href="#">Corduroy Shirts</a></h4>
-                                                    <h4><span>1 × </span>$3200.00</h4>
+                                                    <h4><a href="#">Məhsul 2</a></h4>
+                                                    <h4><span>1 × </span>40.00 azn</h4>
                                                 </div>
                                                 <div class="shopping-cart-delete">
                                                     <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -114,11 +92,11 @@
                                         </ul>
                                         <div class="shopping-cart-footer">
                                             <div class="shopping-cart-total">
-                                                <h4>Total <span>$4000.00</span></h4>
+                                                <h4>Cəm <span>60.00 azn</span></h4>
                                             </div>
                                             <div class="shopping-cart-button">
-                                                <a href="#" class="outline">View cart</a>
-                                                <a href="#">Checkout</a>
+                                                <a href="#" class="outline">Səbətə bax</a>
+                                                <a href="#">Rəsmiləşdir</a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,23 +109,18 @@
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                                <a href="#"><i class="fi fi-rs-user mr-10"></i>Hesab</a>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-location-alt mr-10"></i>Order
-                                                    Tracking</a>
+                                                <a href="#"><i class="fi fi-rs-label mr-10"></i>Sifariş tarixçəsi</a>
                                             </li>
+                                         
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
+                                                <a href="#"><i class="fi fi-rs-heart mr-10"></i>favorilər</a>
                                             </li>
+                                       
                                             <li>
-                                                <a href="#"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Çıxış</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -166,96 +139,31 @@
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block categories-button-active ">
-                            <a class="categories-button-active open-div" href="#">
-                                <span class="fi-rs-apps"></span> <span class="et">Browse</span> All Categories
-                                <i class="fi-rs-angle-down"></i>
-                            </a>
-                            <div id="myPopup" class="categories-dropdown-wrap categories-dropdown-active-large font-heading popup">
-                                <div class="d-flex categori-dropdown-inner">
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-1.svg' %}" alt="">Milks and Dairies</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-2.svg' %}" alt="">Clothing &amp;
-                                                beauty</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-3.svg' %}" alt="">Pet Foods &amp; Toy</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-4.svg' %}" alt="">Baking material</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-5.svg' %}" alt="">Fresh Fruit</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="end">
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-6.svg' %}" alt="">Wines &amp; Drinks</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-7.svg' %}" alt="">Fresh Seafood</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-8.svg' %}" alt="">Fast food</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="{% static 'images/category-9.svg' %}" alt="">Vegetables</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <img src="images/category-10.svg" alt="">Bread and Juice</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="more_slide_open" style="display: none">
-                                    <div class="d-flex categori-dropdown-inner">
-                                        <ul>
-                                            <li>
-                                                <a href="#"> <img src="{% static 'images/icon-1.svg' %}" alt="">Milks and Dairies</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <img src="{% static 'images/icon-2.svg' %}" alt="">Clothing &amp;
-                                                    beauty</a>
-                                            </li>
-                                        </ul>
-                                        <ul class="end">
-                                            <li>
-                                                <a href="#"> <img src="{% static 'images/icon-3.svg' %}" alt="">Wines &amp; Drinks</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <img src="{% static 'images/icon-4.svg' %}" alt="">Fresh Seafood</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="more_categories"><span class="icon"></span> <span class="heading-sm-1">Show
-                                        more...</span></div>
-                            </div>
+                      
                         </div>
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
                                 <ul>
                                     <li>
-                                        <a class="active" href="{% url 'home' %}">Ana Səhifə</a>
+                                        <a  href="{% url 'home' %}">Ana Səhifə</a>
 
                                     </li>
                                     <li>
-                                        <a href="About Us.html">Haqqında</a>
+                                        <a href="{% url 'about' %}">Haqqında</a>
                                     </li>
                                     <li>
-                                        <a href="Shop.html">Məhsullar</a>
-
-                                    </li>
-
-
-                                    <li>
-                                        <a href="Blog.html">Bloq </a>
+                                        <a href="{% url 'shop' %}">Məhsullar</a>
 
                                     </li>
 
+
                                     <li>
-                                        <a href="Contact.html">Əlaqə</a>
+                                        <a href="{% url 'blog' %}">Bloq </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a class="active" href="{% url 'contact' %}">Əlaqə</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -274,23 +182,23 @@
                             <div class="header-action-icon-2">
                                 <a href="#">
                                     <img alt="Nest" src="{% static 'images/icon-heart.svg' %}">
-                                    <span class="pro-count white">4</span>
+                                    <span class="pro-count white">0</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
                                     <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
-                                    <span class="pro-count white">2</span>
+                                    <span class="pro-count white">0</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'images/thumbnail-3.jpg' %}"></a>
+                                                <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="#">Plain Striola Shirts</a></h4>
-                                                <h3><span>1 × </span>$800.00</h3>
+                                                <h4><a href="#">Məhsul 1</a></h4>
+                                                <h4><span>1 × </span>20.00 azn</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -298,11 +206,11 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'images/thumbnail-4.jpg' %}"></a>
+                                                <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
-                                                <h4><a href="#">Macbook Pro 2022</a></h4>
-                                                <h3><span>1 × </span>$3500.00</h3>
+                                                <h4><a href="#">Məhsul 2</a></h4>
+                                                <h4><span>1 × </span>40.00 azn</h4>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="fi-rs-cross-small"></i></a>
@@ -311,11 +219,11 @@
                                     </ul>
                                     <div class="shopping-cart-footer">
                                         <div class="shopping-cart-total">
-                                            <h4>Total <span>$383.00</span></h4>
+                                            <h4>Cəm <span>60.00 azn</span></h4>
                                         </div>
                                         <div class="shopping-cart-button">
-                                            <a href="#">View cart</a>
-                                            <a href="#">Checkout</a>
+                                            <a href="#" class="outline">Səbətə bax</a>
+                                            <a href="#">Rəsmiləşdir</a>
                                         </div>
                                     </div>
                                 </div>
@@ -327,23 +235,18 @@
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-user mr-10"></i>My Account</a>
+                                            <a href="#"><i class="fi fi-rs-user mr-10"></i>Hesab</a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-location-alt mr-10"></i>Order
-                                                Tracking</a>
+                                            <a href="#"><i class="fi fi-rs-label mr-10"></i>Sifariş tarixçəsi</a>
                                         </li>
+                                     
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-label mr-10"></i>My Voucher</a>
+                                            <a href="#"><i class="fi fi-rs-heart mr-10"></i>favorilər</a>
                                         </li>
+                                   
                                         <li>
-                                            <a href="#"><i class="fi fi-rs-heart mr-10"></i>My Wishlist</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                            <a href="#"><i class="fi fi-rs-sign-out mr-10"></i>Çıxış</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -358,7 +261,7 @@
         <div class="mobile-header-wrapper-inner">
             <div class="mobile-header-top">
                 <div class="mobile-header-logo">
-                    <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+                    <a href="#"><img src="{% static 'logo_black.svg' %}" alt="logo"></a>
                 </div>
                 <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                     <button class="close-style search-close">
@@ -370,7 +273,7 @@
             <div class="mobile-header-content-area">
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#">
-                        <input type="text" placeholder="Search for items…">
+                        <input type="text" placeholder="Məhsullarda axtar">
                         <button type="submit"><i class="fi-rs-search"></i></button>
                     </form>
                 </div>
@@ -379,25 +282,25 @@
                     <nav>
                         <ul class="mobile-menu font-heading">
                             <li class="menu-item-has-children">
-                                <a href="#">Ana Səhifə</a>
+                                <a href="{% url 'home' %}">Ana Səhifə</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Haqqında</a>
+                                <a href="{% url 'about' %}">Haqqında</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Məhsullar</a>
+                                <a href="{% url 'shop' %}">Məhsullar</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Bloq</a>
+                                <a href="{% url 'blog' %}">Bloq</a>
                             </li>
                             <li class="menu-item-has-children">
-                                <a href="#">Əlaqə</a>
+                                <a  href="{% url 'contact' %}">Əlaqə</a>
                             </li>
                             <li class="menu-item-has-children">
                                 <a href="#">Dillər</a>
                                 <ul class="dropdown">
                                     <li><a href="#">English</a></li>
-                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">Azerbaijan</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -409,10 +312,10 @@
                         <a href="#"><i class="fi-rs-marker"></i> Our location </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-user"></i>Log In / Sign Up </a>
+                        <a href="#"><i class="fi-rs-user"></i>Baku, Azerbaijan </a>
                     </div>
                     <div class="single-mobile-header-info">
-                        <a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
+                        <a href="#"><i class="fi-rs-headphones"></i>(+994) 51 000 00 00 </a>
                     </div>
                 </div>
                 <div class="mobile-social-icon mb-50">
@@ -490,39 +393,29 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="contact-from-area padding-20-row-col">
-                                        <h5 class="text-brand mb-10">Contact form</h5>
-                                        <h2 class="mb-10">Drop Us a Line</h2>
-                                        <p class="text-muted mb-30 font-sm">Your email address will not be published.
-                                            Required fields are marked *</p>
-                                        <form class="contact-form-style mt-30" id="contact-form" action="#"
+                                        <h5 class="text-brand mb-10">Əlaqə formu</h5>
+                                        <h2 class="mb-10">İndi biz daha yaxında</h2>
+                                        <p class="text-muted mb-30 font-sm">Ən qısa zamanda geri dönüş olunacaq, təşəkkürlər</p>
+                                        <form class="contact-form-style mt-30" 
                                             method="post">
+                                            {% csrf_token %}
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="input-style mb-20">
-                                                        <input name="name" placeholder="First Name" type="text">
+                                                        <input name="name" placeholder="Tam ad" id="name" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="input-style mb-20">
-                                                        <input name="email" placeholder="Your Email" type="email">
+                                                        <input name="email" placeholder="E-poçt" id="email" type="email">
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="input-style mb-20">
-                                                        <input name="telephone" placeholder="Your Phone" type="tel">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="input-style mb-20">
-                                                        <input name="subject" placeholder="Subject" type="text">
-                                                    </div>
-                                                </div>
+                                        
                                                 <div class="col-lg-12 col-md-12">
                                                     <div class="textarea-style mb-30">
-                                                        <textarea name="message" placeholder="Message"></textarea>
+                                                        <textarea name="message" placeholder="Məktubunuz" id="message"></textarea>
                                                     </div>
-                                                    <button class="submit submit-auto-width" type="submit">Send
-                                                        message</button>
+                                                    <button class="submit  submit_btn" id="submit_btn" onclick="submitData()" >Göndər</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -693,6 +586,78 @@
         });
     });
     </script>
+                 
+                 <script>
+                    var csrfToken = "{{ csrf_token }}";
+                    function submitData() {
+                        event.preventDefault();
+            
+                        // Get the email input value
+                        const email = document.getElementById('email').value;
+                        const name = document.getElementById('name').value;
+           
+                        const message = document.getElementById('message').value;
+           
+                       console.log(email,name,message)
+                        // Check if the class name of the clicked button is "submit_btn"
+                        const clickedButton = event.target;
+                        if (clickedButton.classList.contains('submit_btn')) {
+                            // Send the data to a URL (replace 'your_url' with the actual URL)
+                            const url = '{% url "message" %}';
+                            if (email === '') {
+                                swal('Email unvaninizi daxil edin !');
+                                return;
+                            }
+                            else if (name === '') {
+                                swal('Adinizi daxil edin !');
+                                return;
+                            }
+                     
+                   
+                            else if (message === '') {
+                                swal('Məktubunuzu daxil edin !');
+                                return;
+                            }
+            
+                            // You can use a method like fetch to send the data to the server
+                            fetch(url, {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    email: email,
+                                    name: name,
+                                    message: message,
+                          
+            
+                                }), // You can format the data as needed
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-CSRFToken': csrfToken
+                                }
+                            })
+                                .then(response => {
+                                    // Handle the response here (e.g., show a success message)
+                                    if (response.ok) {
+                                        console.log(response)
+                                        console.log(name, email)
+                                        swal({
+                                            title: "Əla",
+                                            text: "Məktubunuz uğurla göndərildi !",
+                                            icon: "success",
+                                            button: "Tamam",
+                                        });
+            
+                                    } else {
+                                        console.log(response)
+                                        swal('Xəta baş verdi');
+                                        console.log(name, email)
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
+                                });
+                        }
+                    }
+                </script>
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
     <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>

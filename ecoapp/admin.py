@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ecoapp.models import Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners
+from ecoapp.models import Slides,Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners,Subject
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
 
@@ -13,6 +13,8 @@ admin.site.register(Blog)
 admin.site.register(HomeAbout)
 admin.site.register(HomeIcons)
 admin.site.register(Partners)
+admin.site.register(Subject)
+admin.site.register(Slides)
 
 # class MyModelAdmin(admin.ModelAdmin):
 #     formfield_overrides = {
