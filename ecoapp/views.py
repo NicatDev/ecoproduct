@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect, get_object_or_404
-from ecoapp.models import Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners,Slides
+from ecoapp.models import Product,Category,Basket_card,Brend,NutritionValue,Header,Blog,HomeAbout,HomeIcons,Partners,Slides,User
 from django.urls import translate_url
 from django.db.models import Q,F,FloatField,Count
 from django.db.models.functions import Coalesce
@@ -96,5 +96,23 @@ def message(request):
             return HttpResponse(status=405) 
         data = {'message': 'Data saved successfully'}
         return JsonResponse(data)
+    else:
+        return HttpResponse(status=405) 
+    
+def wish(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data)
+        product=Product.objects.get(id=data.get('id'))
+        user = User.objects.get(id=data.get('userid'))
+        if user in product.wishlist.all():
+            product.wishlist.remove(user)
+            print('remove')
+            return HttpResponse(status=200) 
+        else:
+            product.wishlist.add(user)
+            print('add')
+
+            return HttpResponse(status=201) 
     else:
         return HttpResponse(status=405) 

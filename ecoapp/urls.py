@@ -8,7 +8,9 @@ urlpatterns = [
     path('about',about,name='about'),
     path('blog',blog,name='blog'),
     path('contact',contact,name='contact'),
-    path('message',message,name='message')
+    path('message',message,name='message'),
+    path('wish',wish,name='wish'),
+    
 
 ]
 urlpatterns += [

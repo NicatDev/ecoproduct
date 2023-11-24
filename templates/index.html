@@ -13,6 +13,9 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <!-- Favicon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_black.svg' %}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -505,9 +508,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
-                        <div class="banner-img style-2">
+                        <div class="banner-img style-2" style="height: 100% !important;">
                             <div class="banner-text">
-                                <h2  class="mb-100"> Tərəfdaşlarımız
+                                <h2 id="changedh2"  class="mb-100"> Tərəfdaşlarımız
                                 </h2>
                             </div>
                         </div>
@@ -658,7 +661,7 @@
                                         </div>
 
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">{{product.brend}}</span>
+                                            <span class="hot">Çox satılan</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
@@ -677,7 +680,8 @@
                                                 <span class="old-price">{{product.price}}</span>
                                             </div>
                                             <div class="add-cart">
-                                                <a class="add" href="#"><i
+                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
+                                                <a class="add basket" onclick="basket()"><i
                                                         class="fi-rs-shopping-cart mr-5"></i>Əlavə et</a>
                                             </div>
                                         </div>
@@ -716,7 +720,7 @@
                                                 data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">
-                                            <span class="hot">{{product.brend}}</span>
+                                            <span class="hot">Çox satılan</span>
                                         </div>
                                     </div>
                                     <div class="product-content-wrap">
@@ -733,15 +737,13 @@
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
-                                                <span>{{ product.price }}</span>
-                                             
-                                                     <span class="old-price">{{product.result}}</span>
-                                        
-                                               
+                                                <span>{{product.price}}</span>
+                                                <span class="old-price">{{product.price}}</span>
                                             </div>
                                             <div class="add-cart">
-                                                <a class="add" href="shop-cart.html"><i
-                                                        class="fi-rs-shopping-cart mr-5"></i>Əlavə et </a>
+                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
+                                                <a class="add basket" onclick="basket()" ><i
+                                                        class="fi-rs-shopping-cart mr-5"></i>Əlavə et</a>
                                             </div>
                                         </div>
                                     </div>
@@ -979,9 +981,106 @@
     });
 });
 </script>
+<script>
+    function basket(){
+        swal('Online satış tezliklə xidmıtinizdə')
+        return;
+    }
+</script>
+<script>
+    var csrfToken = "{{ csrf_token }}";
+    
+    var userid = "{{request.user.id}}"
+    function wish(id) {
+        event.preventDefault();
+        if (id == 'auth'){
+            swal('Giriş etməyiniz rica olunur !');
+            return;
+        }
+        // Get the email input value
+        
 
+        // Check if the class name of the clicked button is "submit_btn"
+        const clickedButton = event.target;
+    
+            // Send the data to a URL (replace 'your_url' with the actual URL)
+            const url = '{% url "wish" %}';
+          
+        console.log(id)
+            // You can use a method like fetch to send the data to the server
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({
+                    id:id,
+                    userid:userid
+          
 
+                }), // You can format the data as needed
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                }
+            })
+                .then(response => {
+                    // Handle the response here (e.g., show a success message)
+                    if (response.ok) {
+                        console.log(response.status)
+                        if (response.status=='200'){
+                        
+                            var mainElements = document.querySelectorAll('.wish-' + id);
+                            console.log(mainElements,'1122')
+                            mainElements.forEach(mainElement => {
+                                console.log(mainElement)
+                                        var iElement = mainElement.querySelector('i');
 
+                  
+                                        if (iElement && iElement.classList.contains('fa-regular')) {
+                   
+                                            iElement.classList.remove('fa-regular');
+                                            iElement.classList.add('fa-solid');
+                                        }
+                                    })
+                        }
+                        if (response.status=='201'){
+                           
+                            var mainElements = document.querySelectorAll('.wish-' + id);
+                            console.log(mainElements,'22')
+                            mainElements.forEach(mainElement => {
+                                        var iElement = mainElement.querySelector('i');
+
+                                    console.log(mainElement)
+                                        if (iElement && iElement.classList.contains('fa-solid')) {
+                                            iElement.classList.remove('fa-solid');
+                                            iElement.classList.add('fa-regular');
+                                          
+                                        }
+                                    })
+                        }
+                        swal({
+                            title: "Əla",
+                            text: "Məktubunuz uğurla göndərildi !",
+                            icon: "success",
+                            button: "Tamam",
+                        });
+
+                    } else {
+                        console.log(response)
+                        swal('Xəta baş verdi');
+                        console.log(name, email)
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    
+</script>
+<style>
+    @media (max-width: 1400px) {
+    #changedh2{
+        font-size:20px !important
+    }}
+</style>
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
     <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
