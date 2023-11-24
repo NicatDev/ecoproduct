@@ -495,7 +495,7 @@
                                                 <span class="old-price">{{product.price}}</span>
                                             </div>
                                             <div class="add-cart">
-                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
+                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if not request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
                                                 <a class="add basket" onclick="basket()" ><i
                                                         class="fi-rs-shopping-cart mr-5"></i>Əlavə et</a>
                                             </div>
@@ -549,7 +549,7 @@
                                                 <span class="old-price">{{product.price}}</span>
                                             </div>
                                             <div class="add-cart">
-                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
+                                                <a class="add wish wish-{{product.id}}" id="wish-{{product.id}}" {% if user.is_authenticated %} onclick="wish('{{product.id}}')" {% else %} onclick="wish('auth')" {% endif %}><i {% if not request.user in product.wishlist.all %} class="fa-regular fa-heart" {% else %} class="fa-solid fa-heart" {% endif %}></i></a>
                                                 <a class="add basket" onclick="basket()" ><i
                                                         class="fi-rs-shopping-cart mr-5"></i>Əlavə et</a>
                                             </div>
@@ -720,7 +720,7 @@
                         // Handle the response here (e.g., show a success message)
                         if (response.ok) {
                             console.log(response.status)
-                            if (response.status=='201'){
+                            if (response.status=='200'){
                             
                                 var mainElements = document.querySelectorAll('.wish-' + id);
                                 console.log(mainElements,'1122')
@@ -736,7 +736,7 @@
                                             }
                                         })
                             }
-                            if (response.status=='200'){
+                            if (response.status=='201'){
                                
                                 var mainElements = document.querySelectorAll('.wish-' + id);
                                 console.log(mainElements,'22')
