@@ -34,12 +34,13 @@ class Blog(BaseMixin):
     
     def save(self, *args, **kwargs):
         new_slug = slugify(self.title)
-        self.slug = new_slug
+        
         if Blog.objects.filter(slug=new_slug).exists():
             count = 1
             while Blog.objects.filter(slug=new_slug).exists():
                 new_slug = f"{slugify(self.title)}-{count}"
                 count += 1
+        self.slug = new_slug
         super(Blog, self).save(*args, **kwargs)  
        
 class Category(models.Model):

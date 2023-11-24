@@ -10,6 +10,7 @@ urlpatterns = [
     path('contact',contact,name='contact'),
     path('message',message,name='message'),
     path('wish',wish,name='wish'),
+ 
     
 
 ]

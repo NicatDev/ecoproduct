@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>EcoProduct</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_black.svg' %}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
     integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_black.svg' %}">
-    <!-- Template CSS -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -78,23 +78,15 @@
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="detail-info pr-30 pl-30">
-                                <span class="stock-status out-stock"> Sale Off </span>
-                                <h3 class="title-detail"><a href="#" class="text-heading">Seeds of Change Organic
-                                        Quinoa, Brown</a></h3>
-                                <div class="product-detail-rating">
-                                    <div class="product-rate-cover text-end">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width: 90%"></div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (32 reviews)</span>
-                                    </div>
-                                </div>
+                                <span class="stock-status out-stock"> Endirim </span>
+                                <h3 class="title-detail"><a href="#" class="text-heading">Sante dietik məhsuk</a></h3>
+                              
                                 <div class="clearfix product-price-cover">
                                     <div class="product-price primary-color float-left">
-                                        <span class="current-price text-brand">$38</span>
+                                        <span class="current-price text-brand">40 azn</span>
                                         <span>
-                                            <span class="save-price font-md color3 ml-15">26% Off</span>
-                                            <span class="old-price font-md ml-15">$52</span>
+                                            <span class="save-price font-md color3 ml-15">33%</span>
+                                            <span class="old-price font-md ml-15">60azn</span>
                                         </span>
                                     </div>
                                 </div>
@@ -106,13 +98,13 @@
                                     </div>
                                     <div class="product-extra-link2">
                                         <button type="submit" class="button button-add-to-cart"><i
-                                                class="fi-rs-shopping-cart"></i>Add to cart</button>
+                                                class="fi-rs-shopping-cart"></i>Karta əlavə et</button>
                                     </div>
                                 </div>
                                 <div class="font-xs">
                                     <ul>
-                                        <li class="mb-5">Vendor: <span class="text-brand">Nest</span></li>
-                                        <li class="mb-5">MFG:<span class="text-brand"> Jun 4.2022</span></li>
+                                        <li class="mb-5">Brend: <span class="text-brand">Sante</span></li>
+                                        <li class="mb-5">İstifadə müddəti:<span class="text-brand"> 12 ay</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -149,14 +141,14 @@
 
                                 <div class="header-action-icon-2">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Favorilər</span></a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="#">
-                                        <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                        <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Səbət</span></a>
@@ -164,7 +156,7 @@
                                         <ul>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 1</a></h4>
@@ -176,7 +168,7 @@
                                             </li>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 2</a></h4>
@@ -200,7 +192,7 @@
                                 </div>
                                 <div class="header-action-icon-2 mouse">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                     </a>
                                     <a href="#"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -232,7 +224,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+                        <a href="#"><img id="logomobile" style="max-height: 50px;max-width: 40px;" src="{% static 'logo_white.png' %}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block categories-button-active ">
@@ -278,20 +270,20 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 <a href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 1</a></h4>
@@ -303,7 +295,7 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 2</a></h4>
@@ -327,7 +319,7 @@
                             </div>
                             <div class="header-action-icon-2 mouse">
                                 <a href="#">
-                                    <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                    <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
@@ -714,7 +706,7 @@
                                         </div>
                                         <div class="product-action-1">
                                        
-                                            <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i
+                                            <a aria-label="Compare" class="action-btn" href=""><i
                                                     class="fi-rs-shuffle"></i></a>
                                             <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal"
                                                 data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
@@ -725,15 +717,15 @@
                                     </div>
                                     <div class="product-content-wrap">
                                         <div class="product-category">
-                                            <a href="shop-grid-right.html">{{product.category.name}}</a>
+                                            <a href="#">{{product.category.name}}</a>
                                         </div>
-                                        <h2><a href="shop-product-right.html">{{product.name}}</a></h2>
+                                        <h2><a href="#">{{product.name}}</a></h2>
                                         <div class="product-rate-cover">
                                            
                                         </div>
                                         <div>
                                             <span class="font-small text-muted">By <a
-                                                    href="vendor-details-1.html">Nijat Mammadov</a></span>
+                                                    href="vendor-details-1">Nijat Mammadov</a></span>
                                         </div>
                                         <div class="product-card-bottom">
                                             <div class="product-price">
@@ -1077,9 +1069,17 @@
 </script>
 <style>
     @media (max-width: 1400px) {
-    #changedh2{
-        font-size:20px !important
+        #changedh2{
+            font-size:26px !important;
+            font-weight:600 ;
+        }}
+    @media (max-width: 500px) {
+    #logomobile{
+        display: none !important;
     }}
+    .mb-50 {
+    margin-bottom: 30px !important;
+}
 </style>
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
@@ -1102,7 +1102,7 @@
     <script src="{% static 'js/jquery.vticker-min.js' %}"></script>
     <script src="{% static 'js/jquery.theia.sticky.js' %}"></script>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
-    <!-- Template  JS -->
+
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/shop.js' %}"></script>
 

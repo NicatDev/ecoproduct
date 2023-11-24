@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ecoproduct</title>
+    <title>EcoProduct</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_black.svg' %}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +14,8 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_white.png' %}">
-    <!-- Template CSS -->
+
+  
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -48,14 +49,14 @@
 
                                 <div class="header-action-icon-2">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Favorilər</span></a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="#">
-                                        <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                        <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Səbət</span></a>
@@ -63,7 +64,7 @@
                                         <ul>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 1</a></h4>
@@ -75,7 +76,7 @@
                                             </li>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 2</a></h4>
@@ -99,7 +100,7 @@
                                 </div>
                                 <div class="header-action-icon-2 mouse">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                     </a>
                                     <a href="#"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -131,7 +132,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+                        <a href="#"><img id="logomobile" style="max-height: 50px;max-width: 40px;" src="{% static 'logo_white.png' %}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block categories-button-active ">
@@ -177,20 +178,20 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 <a href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 1</a></h4>
@@ -202,7 +203,7 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 2</a></h4>
@@ -226,7 +227,7 @@
                             </div>
                             <div class="header-action-icon-2 mouse">
                                 <a href="#">
-                                    <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                    <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
@@ -467,9 +468,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
-                    <div class="banner-img style-2">
+                    <div class="banner-img style-2" style="height: 100% !important;">
                         <div class="banner-text">
-                            <h2  class="mb-100"> Tərəfdaşlarımız
+                            <h2 id="changedh2"  class="mb-100"> Tərəfdaşlarımız
                             </h2>
                         </div>
                     </div>
@@ -515,7 +516,7 @@
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
                                                     href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="hot">Save 15%</span>
@@ -523,9 +524,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Canada Dry Ginger Ale – 2 L
+                                            <h2><a href="#">Canada Dry Ginger Ale – 2 L
                                                     Bottle</a></h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -541,7 +542,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -549,7 +550,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="images/product-15-1.jpg" alt="">
                                                     <img class="hover-img" src="images/product-15-2.jpg" alt="">
                                                 </a>
@@ -559,9 +560,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="new">Save 35%</span>
@@ -569,9 +570,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Encore Seafoods Stuffed
+                                            <h2><a href="#">Encore Seafoods Stuffed
                                                     Alaskan</a></h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -587,7 +588,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -595,7 +596,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="images/product-12-1.jpg" alt="">
                                                     <img class="hover-img" src="images/product-12-2.jpg" alt="">
                                                 </a>
@@ -605,9 +606,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="sale">Sale</span>
@@ -615,9 +616,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Gorton’s Beer Battered Fish </a>
+                                            <h2><a href="#">Gorton’s Beer Battered Fish </a>
                                             </h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -633,7 +634,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -641,7 +642,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="images/product-13-1.jpg" alt="">
                                                     <img class="hover-img" src="images/product-13-2.jpg" alt="">
                                                 </a>
@@ -651,9 +652,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="best">Best sale</span>
@@ -661,9 +662,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Haagen-Dazs Caramel Cone Ice</a>
+                                            <h2><a href="#">Haagen-Dazs Caramel Cone Ice</a>
                                             </h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -679,7 +680,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -687,7 +688,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="images/product-14-1.jpg" alt="">
                                                     <img class="hover-img" src="images/product-14-2.jpg" alt="">
                                                 </a>
@@ -697,9 +698,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="hot">Save 15%</span>
@@ -707,9 +708,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Italian-Style Chicken Meatball</a>
+                                            <h2><a href="#">Italian-Style Chicken Meatball</a>
                                             </h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -725,7 +726,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -741,7 +742,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="{% static 'images/product-7-1.jpg' %}" alt="">
                                                     <img class="hover-img" src="{% static 'images/product-7-2.jpg' %}" alt="">
                                                 </a>
@@ -751,9 +752,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="hot">Save 15%</span>
@@ -761,9 +762,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Perdue Simply Smart Organics
+                                            <h2><a href="#">Perdue Simply Smart Organics
                                                     Gluten Free</a></h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -779,7 +780,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -787,7 +788,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="{% static 'images/product-8-1.jpg' %}" alt="">
                                                     <img class="hover-img" src="{% static 'images/product-8-2.jpg' %}" alt="">
                                                 </a>
@@ -797,9 +798,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="new">Save 35%</span>
@@ -807,9 +808,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Seeds of Change Organic Quinoa</a>
+                                            <h2><a href="#">Seeds of Change Organic Quinoa</a>
                                             </h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -825,7 +826,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -833,7 +834,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="{% static 'images/product-9-1.jpg' %}" alt="">
                                                     <img class="hover-img" src="{% static 'images/product-9-2.jpg' %}" alt="">
                                                 </a>
@@ -843,9 +844,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="sale">Sale</span>
@@ -853,9 +854,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Signature Wood-Fired Mushroom</a>
+                                            <h2><a href="#">Signature Wood-Fired Mushroom</a>
                                             </h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -871,7 +872,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -879,7 +880,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="{% static 'images/product-13-1.jpg' %}" alt="">
                                                     <img class="hover-img" src="{% static 'images/product-13-2.jpg' %}" alt="">
                                                 </a>
@@ -889,9 +890,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn small hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="best">Best sale</span>
@@ -899,9 +900,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Simply Lemonade with Raspberry
+                                            <h2><a href="#">Simply Lemonade with Raspberry
                                                     Juice</a></h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -917,7 +918,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -925,7 +926,7 @@
                                     <div class="product-cart-wrap">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="shop-product-right.html">
+                                                <a href="#">
                                                     <img class="default-img" src="{% static 'images/product-14-1.jpg' %}" alt="">
                                                     <img class="hover-img" src="{% static 'images/product-14-2.jpg' %}" alt="">
                                                 </a>
@@ -935,9 +936,9 @@
                                                     data-bs-toggle="modal" data-bs-target="#quickViewModal"> <i
                                                         class="fi-rs-eye"></i></a>
                                                 <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                    href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
+                                                    href="#"><i class="fi-rs-heart"></i></a>
                                                 <a aria-label="Compare" class="action-btn smareqemlerll hover-up"
-                                                    href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
+                                                    href="#"><i class="fi-rs-shuffle"></i></a>
                                             </div>
                                             <div class="product-badges product-badges-position product-badges-mrg">
                                                 <span class="hot">Save 15%</span>
@@ -945,9 +946,9 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop-grid-right.html">Hodo Foods</a>
+                                                <a href="#">Hodo Foods</a>
                                             </div>
-                                            <h2><a href="shop-product-right.html">Organic Quinoa, Brown, &amp; Red
+                                            <h2><a href="#">Organic Quinoa, Brown, &amp; Red
                                                     Rice</a></h2>
                                             <div class="product-rate d-inline-block">
                                                 <div class="product-rating" style="width: 80%"></div>
@@ -963,7 +964,7 @@
                                                 </div>
                                                 <span class="font-xs text-heading"> Sold: 90/120</span>
                                             </div>
-                                            <a href="shop-cart.html" class="btn w-100 hover-up"><i
+                                            <a href="#" class="btn w-100 hover-up"><i
                                                     class="fi-rs-shopping-cart mr-5"></i>Add To Cart</a>
                                         </div>
                                     </div>
@@ -1109,6 +1110,17 @@
         });
     });
     </script>
+    <style>
+        @media (max-width: 1400px) {
+        #changedh2{
+            font-size:26px !important;
+            font-weight:600 ;
+        }}
+        @media (max-width: 500px) {
+        #logomobile{
+            display: none !important;
+        }}
+    </style>
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script>
     <script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
@@ -1130,7 +1142,7 @@
     <script src="{% static 'js/jquery.vticker-min.js' %}"></script>
     <script src="{% static 'js/jquery.theia.sticky.js' %}"></script>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
-    <!-- Template  JS -->
+
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/shop.js' %}"></script>
 

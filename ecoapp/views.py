@@ -31,6 +31,10 @@ def home(request):
     products = Product.objects.annotate(result=F('price') - F('discount_price'))
     categories = Category.objects.all()
     slides = Slides.objects.all()
+    if request.GET.get('name'):
+        name = request.GET.get('name')
+        products = products.filter(Q(name__icontains=name) | Q(description__icontains=name) | Q(information__icontains=name))
+
     context = {
         'products':products,
         'headers':headers,
@@ -48,6 +52,11 @@ def shop(request):
     categories = Category.objects.all()
     context = {'products':products,'categories':categories,}
     return render(request,'Shop.html',context)
+
+def account(request):
+
+    context = {}
+    return render(request,'Account.html',context)
 
 def about(request):
     icons = HomeIcons.objects.all()
@@ -67,7 +76,7 @@ def blog(request):
     blogs = Blog.objects.all()
 
 
-    paginator = Paginator(blogs, 12)
+    paginator = Paginator(blogs, 4)
     page = request.GET.get("page", 1)
     blog_list = paginator.get_page(page)
     page_count = paginator.num_pages

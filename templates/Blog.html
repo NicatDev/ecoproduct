@@ -2,7 +2,8 @@
 {% load static %}
 <html class="no-js" lang="en"><head>
     <meta charset="utf-8">
-    <title>Nest - Multipurpose eCommerce HTML Template</title>
+    <title>EcoProduct</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'logo_black.svg' %}">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +11,8 @@
     <meta property="og:type" content="">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.svg' %}">
-    <!-- Template CSS -->
+
+
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -45,14 +45,14 @@
 
                                 <div class="header-action-icon-2">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Favorilər</span></a>
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a class="mini-cart-icon" href="#">
-                                        <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                        <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                         <span class="pro-count blue">0</span>
                                     </a>
                                     <a href="#"><span class="lable">Səbət</span></a>
@@ -60,7 +60,7 @@
                                         <ul>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 1</a></h4>
@@ -72,7 +72,7 @@
                                             </li>
                                             <li>
                                                 <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                    <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                                 </div>
                                                 <div class="shopping-cart-title">
                                                     <h4><a href="#">Məhsul 2</a></h4>
@@ -96,7 +96,7 @@
                                 </div>
                                 <div class="header-action-icon-2 mouse">
                                     <a href="#">
-                                        <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                        <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                     </a>
                                     <a href="#"><span class="lable ml-0">Account</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
@@ -128,7 +128,7 @@
             <div class="container">
                 <div class="header-wrap header-space-between position-relative">
                     <div class="logo logo-width-1 d-block d-lg-none">
-                        <a href="#"><img src="{% static 'images/logo.svg' %}" alt="logo"></a>
+                        <a href="#"><img id="logomobile" style="max-height: 50px;max-width: 40px;" src="{% static 'logo_white.png' %}" alt="logo"></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block categories-button-active ">
@@ -174,20 +174,20 @@
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
                                 <a href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-heart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-heart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                             </div>
                             <div class="header-action-icon-2">
                                 <a class="mini-cart-icon" href="#">
-                                    <img alt="Nest" src="{% static 'images/icon-cart.svg' %}">
+                                    <img alt="eco" src="{% static 'images/icon-cart.svg' %}">
                                     <span class="pro-count white">0</span>
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2">
                                     <ul>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'on.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'on.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 1</a></h4>
@@ -199,7 +199,7 @@
                                         </li>
                                         <li>
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img alt="Nest" src="{% static 'arxa.png' %}"></a>
+                                                <a href="#"><img alt="eco" src="{% static 'arxa.png' %}"></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <h4><a href="#">Məhsul 2</a></h4>
@@ -223,7 +223,7 @@
                             </div>
                             <div class="header-action-icon-2 mouse">
                                 <a href="#">
-                                    <img class="svgInject" alt="Nest" src="{% static 'images/icon-user.svg' %}">
+                                    <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                 </a>
                                 <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                     <ul>
@@ -355,15 +355,15 @@
                                 {% for blog in blogs %}
                                 <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated">
                                     <div class="post-thumb">
-                                        <a href="blog-post-right.html">
+                                        <a href="">
                                             <img class="border-radius-15" src="{{blog.image.url}}" alt="">
                                         </a>
                                     </div>
                                     <div class="entry-content-2">
                                         <h6 class="mb-10 font-sm"><a class="entry-meta text-muted"
-                                                href="blog-category-grid.html">{{blog.subject.name}}</a></h6>
+                                                href="#">{{blog.subject.name}}</a></h6>
                                         <h4 class="post-title mb-15">
-                                            <a href="blog-post-right.html">{{blog.title}}</a>
+                                            <a href="#">{{blog.title}}</a>
                                         </h4>
                                         <div class="entry-meta font-xs color-grey mt-10 pb-10">
                                             <div>
@@ -384,7 +384,7 @@
                                         <a class="page-link" {% if not blogs.has_previous %}
                                         disabled="true" style="cursor:not-allowed" 
                                         {% endif %} {% if blogs.has_previous %}
-                                        href="?page={{ blogs.previous_page_number }}{% endif %}><i class="fi-rs-arrow-small-left"></i></a>
+                                        href="?page={{ blogs.previous_page_number }}{% endif %}"><i class="fi-rs-arrow-small-left"></i></a>
                                     </li>
                                     {% for c in count %}
                                     <li class="page-item {% if forloop.counter == blogs.number %} active {% endif %}"><a class="page-link" href="?page={{c}}">{{c}}</a></li>
@@ -393,7 +393,7 @@
                                         <a class="page-link"{% if not blogs.has_next %}
                                         disabled="true" style="cursor:not-allowed" 
                                         {% endif %} {% if blogs.has_next %}
-                                        href="?page={{ blogs.next_page_number }}{% endif %}><i class="fi-rs-arrow-small-right"></i></a>
+                                        href="?page={{ blogs.next_page_number }}{% endif %}"><i class="fi-rs-arrow-small-right"></i></a>
                                     </li>
                                 </ul>
                             </nav>
@@ -528,6 +528,16 @@
         });
     });
     </script>
+    <style>
+        @media (max-width: 1400px) {
+        #changedh2{
+            font-size:20px !important
+        }}
+        @media (max-width: 500px) {
+        #logomobile{
+            display: none !important;
+        }}
+    </style>
     <!-- Vendor JS-->
     <script data-cfasync="false" src="{% static 'js/email-decode.min.js' %}"></script><script src="{% static 'js/modernizr-3.6.0.min.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
@@ -548,7 +558,7 @@
     <script src="{% static 'js/jquery.vticker-min.js' %}"></script>
     <script src="{% static 'js/jquery.theia.sticky.js' %}"></script>
     <script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
-    <!-- Template  JS -->
+ 
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/shop.js' %}"></script>
 
