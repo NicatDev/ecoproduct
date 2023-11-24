@@ -61,7 +61,7 @@ def about(request):
 
 def contact(request):
     context = {}
-    return render(request,'contact.html',context)
+    return render(request,'Contact.html',context)
 
 def blog(request):
     blogs = Blog.objects.all()
