@@ -1,7 +1,9 @@
-.header_bg_red {
+/* .header_bg_red {
     background-color: #29A56C !important;
+} */
+.search-style-2{
+    padding-left: 80px;
 }
-
 .accordion-color {
     color: #29A56C;
 }

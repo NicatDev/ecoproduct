@@ -194,7 +194,7 @@
                                     <a href="#">
                                         <img class="svgInject" alt="eco" src="{% static 'images/icon-user.svg' %}">
                                     </a>
-                                    <a href="#"><span class="lable ml-0">Account</span></a>
+                                    <a href="#"><span class="lable ml-0">Hesab</span></a>
                                     <div class="cart-dropdown-wrap cart-dropdown-hm2 account-dropdown">
                                         <ul>
                                             <li>
@@ -253,6 +253,9 @@
 
                                     <li>
                                         <a href="{% url 'contact' %}">Əlaqə</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Kampaniyalar</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -459,7 +462,7 @@
                     <div class="col-lg-5">
                         <h4 class="mb-20 text-muted">{{about.minititle}}</h4>
                         <h1 class="heading-1 mb-40">{{about.title}}</h1>
-                        <p class="mb-30 txtt">{{about.description1}}<br> <br>{{about.description2}}</h1>
+                        <p class="mb-30 txtt">{{about.description1}}<br> <br>{{about.description2}} <a href="#">Daha Ətraflı</a></h1>
 
 
                     </div>
@@ -469,153 +472,10 @@
         </div>
         <!-- about section end? -->
 
-        <section class="featured section-padding pb-30 pt-30">
-            <div class="container">
-                <div class="row">
-                    {% for icon in icons %}
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
-                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
-                            <div class="banner-icon">
-                                <img src="{{icon.icon.url}}" alt="">
-                            </div>
-                            <div class="banner-text">
-                                <h3 class="icon-box-title">{{icon.title}}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-
-
-                </div>
-            </div>
-        </section>
-
-        <!--End banners-->
-
-        <section class="section-padding pb-30 ">
-            <div class="container">
-                <div class="section-title wow animate__animated animate__fadeIn">
-                    <h3 class="deal-bottomm">Tərəfdaşlarımız</h3>
-
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
-                        <div class="banner-img style-2" style="height: 100% !important;">
-                            <div class="banner-text">
-                                <h2 id="changedh2"  class="mb-100"> Tərəfdaşlarımız
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-12 wow animate__animated animate__fadeIn " data-wow-delay=".4s">
-                        <div class="tab-content" id="myTabContent-1">
-                            <div class="tab-pane fade show active" id="tab-one-1" role="tabpanel"
-                                aria-labelledby="tab-one-1">
-                                <div class="carausel-4-columns-cover arrow-center position-relative">
-                                    <div class="slider-arrow slider-arrow-2 carausel-4-columns-arrow"
-                                        id="carausel-4-columns-arrows">
-                                    </div>
-                                    <div class="carausel-3-columns carausel-arrow-center" id="carausel-4-columns">
-                                   
-                                        <!--End product Wrap-->
-                                        {% for partner in partners %}
-                                        <div class="team-card">
-                                            <img src="{{partner.image.url}}" alt="img">
-                                        </div>
-                                        {% endfor %}
-                                        <!--End product Wrap-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End tab-pane-->
-                         
-                        </div>
-                        <!--End tab-content-->
-                    </div>
-                    <!--End Col-lg-9-->
-                </div>
-
-
-                
-            </div>
-            <!-- artan reqemler -->
-              
-            <section class="container pt-30  d-none d-md-block">
-                <div class="row about-count" style="display: flex;justify-content: space-between;">
-                    <div class="col-lg-1-5 col-md-6 text-center mb-lg-0 mb-md-5">
-                        <h1 class="heading-1"><span class="count">12</span>+</h1>
-                        <h4>İl xidmətinizdə</h4>
-                    </div>
-                    <div class="col-lg-1-5 col-md-6 text-center">
-                        <h1 class="heading-1"><span class="count">10000</span>+</h1>
-                        <h4>Məhsul</h4>
-                    </div>
-                    <div class="col-lg-1-5 col-md-6 text-center">
-                        <h1 class="heading-1"><span class="count">58</span>+</h1>
-                        <h4>Çeşid</h4>
-                    </div>
-                    <div class="col-lg-1-5 col-md-6 text-center">
-                        <h1 class="heading-1"><span class="count">24</span>+</h1>
-                        <h4>Brend</h4>
-                    </div>
-                    <div class="col-lg-1-5 col-md-6 text-center">
-                        <h1 class="heading-1"><span class="count">24</span>+</h1>
-                        <h4>Yeni dad</h4>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <!--End Best Sales-->
-        <!-- #nicatin mothesem slideri -->
-        <section class="home-slider position-relative pb-30 pt-30 mobile_slider">
-            <div class="container">
-                <div class="home-slide-cover ">
-                    <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                        {% for slide in slides %}
-                        <div class="single-hero-slider single-animation-wrap">
-                            <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay="0">
-                                <img src="{{slide.image.url}}" alt="">
-                                <div class="banner-text">
-                                    <h4>
-                                        {{slide.title|safe}}
-                                    </h4>
-                                    <a href="#" class="btn btn-xs">İndi al <i class="fi-rs-arrow-small-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-              
-                    </div>
-
-                    <div style="display: none;" class="slider-arrow hero-slider-1-arrow"></div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="banners pb-30 pt-30 desktop_slider ">
-            <div class="container">
-                <div class="row">
-                    {% for slide in slides %}
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay="0">
-                            <img src="{{slide.image.url}}" alt="">
-                            <div class="banner-text">
-                                <h4>
-                                    {{slide.title|safe}}
-                                </h4>
-                                <a href="#" class="btn btn-xs">İndi al <i class="fi-rs-arrow-small-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-               
-                </div>
-            </div>
-        </section>
         <section class="product-tabs section-padding position-relative pb-30 pt-30">
             <div class="container">
                 <div class="section-title style-2 wow animate__animated animate__fadeIn">
-                    <h3 style="text-align: center;">Populyar məhsullar</h3>
+                    <h3 style="text-align: center;">Məhsullar</h3>
                     <ul class="nav nav-tabs links" id="myTab" role="tablist">
                 
                         <li class="nav-item" role="presentation">
@@ -758,60 +618,518 @@
             </div>
           
         </section>
-        <!--Products Tabs-->
-        <!-- blog section start -->
-        <div class="page-content pb-30 pt-30">
+
+        <section class="banners pb-30 pt-30 desktop_slider ">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="shop-product-fillter mb-50">
-                            <div class="totall-product">
-                                <h2 class="deal-bottomm">
-                                  
-                                    Bloq
-                                </h2>
+                    {% for slide in slides %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                            <img src="{{slide.image.url}}" alt="">
+                            <div class="banner-text">
+                                <h4>
+                                    {{slide.title|safe}}
+                                </h4>
+                                <a href="#" class="btn btn-xs">İndi al <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
-                        <div class="loop-grid">
-                            <div class="row">
-                                {% for blog in blogs %}
-                                <article class="col-xl-3 col-lg-4 col-md-6 text-center hover-up mb-30 animated wow animate__animated animate__fadeIn">
-                                    <div class="post-thumb ">
-                                        <a href="#">
-                                            <img class="border-radius-15" src="{{blog.image.url}}" alt="">
-                                        </a>
-                                      
+                    </div>
+                    {% endfor %}
+               
+                </div>
+            </div>
+        </section>
+     
+
+        
+
+        <section class="featured section-padding pb-30 pt-30">
+            <div class="container">
+                <div class="row">
+                    {% for icon in icons %}
+                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6 mb-md-4 mb-xl-0">
+                        <div class="banner-left-icon d-flex align-items-center wow fadeIn animated">
+                            <div class="banner-icon">
+                                <img src="{{icon.icon.url}}" alt="">
+                            </div>
+                            <div class="banner-text">
+                                <h3 class="icon-box-title">{{icon.title}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+           <!--End Best Sales-->
+           <section class="section-padding pb-5">
+            <div class="container">
+                <div class="section-title wow animate__animated animate__fadeIn" data-wow-delay="0">
+                    <h3 class="">Deals Of The Day</h3>
+                    <a class="show-all" href="shop-grid-right.html">
+                        All Deals
+                        <i class="fi-rs-angle-right"></i>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img">
+                                    <a href="shop-product-right.html">
+                                        <img src="images/banner-5.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="deals-countdown-wrap">
+                                    <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"></div>
+                                </div>
+                                <div class="deals-content">
+                                    <h2><a href="#">Seeds of Change Organic Quinoa, Brown, &amp; Red Rice</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
                                     </div>
-                                    <div class="entry-content-2">
-                                        {% if blog.subject.name %}
-                                        <h6 class="mb-10 font-sm "><a class="entry-meta text-muted post-title "
-                                            href="#"><span>{{blog.subject.name}}</span></a></h6>{% endif %}
-                                        <h4 class="post-title mb-15">
-                                            <a href="#">{{blog.title}}</a>
-                                        </h4>
-                                        
-                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
-                                            <div>
-                                                <span class="post-on mr-10">{{blog.created_at}}</span>
-                                                <span class="hit-count has-dot mr-10">{{blog.views}} oxuma</span>
-                                            </div>
+                                    <div>
+                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">NestFood</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>$32.85</span>
+                                            <span class="old-price">$33.8</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
                                         </div>
                                     </div>
-                                </article>
-                                {% endfor %}
-                              
+                                </div>
                             </div>
                         </div>
-                        <div class="deal-bottomm">
-                            <a href="{% url 'blog' %}" class="btn hover-up">Daha ətraflı...</a>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img">
+                                    <a href="shop-product-right.html">
+                                        <img src="images/banner-6.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="deals-countdown-wrap">
+                                    <div class="deals-countdown" data-countdown="2026/04/25 00:00:00"></div>
+                                </div>
+                                <div class="deals-content">
+                                    <h2><a href="shop-product-right.html">Perdue Simply Smart Organics Gluten Free</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Old El Paso</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>$24.85</span>
+                                            <span class="old-price">$26.8</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 d-none d-lg-block">
+                        <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img">
+                                    <a href="shop-product-right.html">
+                                        <img src="images/banner-7.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="deals-countdown-wrap">
+                                    <div class="deals-countdown" data-countdown="2027/03/25 00:00:00"></div>
+                                </div>
+                                <div class="deals-content">
+                                    <h2><a href="shop-product-right.html">Signature Wood-Fired Mushroom and Caramelized</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 80%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (3.0)</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Progresso</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>$12.85</span>
+                                            <span class="old-price">$13.8</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 d-none d-xl-block">
+                        <div class="product-cart-wrap style-2 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
+                            <div class="product-img-action-wrap">
+                                <div class="product-img">
+                                    <a href="shop-product-right.html">
+                                        <img src="images/banner-8.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-content-wrap">
+                                <div class="deals-countdown-wrap">
+                                    <div class="deals-countdown" data-countdown="2025/02/25 00:00:00"></div>
+                                </div>
+                                <div class="deals-content">
+                                    <h2><a href="shop-product-right.html">Simply Lemonade with Raspberry Juice</a></h2>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 80%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (3.0)</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-small text-muted">By <a href="vendor-details-1.html">Yoplait</a></span>
+                                    </div>
+                                    <div class="product-card-bottom">
+                                        <div class="product-price">
+                                            <span>$15.85</span>
+                                            <span class="old-price">$16.8</span>
+                                        </div>
+                                        <div class="add-cart">
+                                            <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- blog section end? -->
-        <!-- faq section start??? -->
-        <div class="container pt-30 pb-30">
+        </section>
+        <!--End Deals-->
+        <section class="section-padding mb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                        <h4 class="section-title style-1 mb-30 animated animated">Ən Çox Satılanlar</h4>
+                        <div class="product-list-small animated animated">
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-7.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Pepperidge Farm Farmhouse Hearty White Bread</a>
+                                    </h6>
+                                  
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-8.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Organic Frozen Triple Berry Blend</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-9.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Oroweat Country Buttermilk Bread</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                        <h4 class="section-title style-1 mb-30 animated animated">Ən Son Axtarılanlar</h4>
+                        <div class="product-list-small animated animated">
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-7.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Pepperidge Farm Farmhouse Hearty White Bread</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-8.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Organic Frozen Triple Berry Blend</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-9.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Oroweat Country Buttermilk Bread</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-sm-5 mb-md-0 d-none d-lg-block wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                        <h4 class="section-title style-1 mb-30 animated animated">Trenddə Olanlar</h4>
+                        <div class="product-list-small animated animated">
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-7.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Pepperidge Farm Farmhouse Hearty White Bread</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-8.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Organic Frozen Triple Berry Blend</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row align-items-center hover-up">
+                                <figure class="col-md-4 mb-0">
+                                    <a href="shop-product-right.html"><img src="images/thumbnail-9.jpg" alt=""></a>
+                                </figure>
+                                <div class="col-md-8 mb-0">
+                                    <h6>
+                                        <a href="shop-product-right.html">Oroweat Country Buttermilk Bread</a>
+                                    </h6>
+                                    <div class="product-rate-cover">
+                                        <div class="product-rate d-inline-block">
+                                            <div class="product-rating" style="width: 90%"></div>
+                                        </div>
+                                        <span class="font-small ml-5 text-muted"> (4.0)</span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>$32.85</span>
+                                        <span class="old-price">$33.8</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End 4 columns-->
+        <!--End banners-->
+
+        <section class="section-padding pb-30 ">
+            <div class="container">
+                <div class="section-title wow animate__animated animate__fadeIn">
+                    <h3 class="deal-bottomm">Tərəfdaşlarımız</h3>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 d-none d-lg-flex wow animate__animated animate__fadeIn">
+                        <div class="banner-img style-2" style="height: 100% !important;">
+                            <div class="banner-text">
+                                <h2 id="changedh2"  class="mb-100"> Tərəfdaşlarımız
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12 wow animate__animated animate__fadeIn " data-wow-delay=".4s">
+                        <div class="tab-content" id="myTabContent-1">
+                            <div class="tab-pane fade show active" id="tab-one-1" role="tabpanel"
+                                aria-labelledby="tab-one-1">
+                                <div class="carausel-4-columns-cover arrow-center position-relative">
+                                    <div class="slider-arrow slider-arrow-2 carausel-4-columns-arrow"
+                                        id="carausel-4-columns-arrows">
+                                    </div>
+                                    <div class="carausel-3-columns carausel-arrow-center" id="carausel-4-columns">
+                                   
+                                        <!--End product Wrap-->
+                                        {% for partner in partners %}
+                                        <div class="team-card">
+                                            <img src="{{partner.image.url}}" alt="img">
+                                        </div>
+                                        {% endfor %}
+                                        <!--End product Wrap-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End tab-pane-->
+                         
+                        </div>
+                        <!--End tab-content-->
+                    </div>
+                    <!--End Col-lg-9-->
+                </div>
+
+
+                
+            </div>
+            <!-- artan reqemler -->
+              
+            <section class="container pt-30  d-none d-md-block">
+                <div class="row about-count" style="display: flex;justify-content: space-between;">
+                    <div class="col-lg-1-5 col-md-6 text-center mb-lg-0 mb-md-5">
+                        <h1 class="heading-1"><span class="count">12</span>+</h1>
+                        <h4>İl xidmətinizdə</h4>
+                    </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">10000</span>+</h1>
+                        <h4>Məhsul</h4>
+                    </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">58</span>+</h1>
+                        <h4>Çeşid</h4>
+                    </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">24</span>+</h1>
+                        <h4>Brend</h4>
+                    </div>
+                    <div class="col-lg-1-5 col-md-6 text-center">
+                        <h1 class="heading-1"><span class="count">24</span>+</h1>
+                        <h4>Yeni dad</h4>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <!--End Best Sales-->
+        <!-- #nicatin mothesem slideri -->
+        <section class="home-slider position-relative pb-30 pt-30 mobile_slider">
+            <div class="container">
+                <div class="home-slide-cover ">
+                    <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
+                        {% for slide in slides %}
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                                <img src="{{slide.image.url}}" alt="">
+                                <div class="banner-text">
+                                    <h4>
+                                        {{slide.title|safe}}
+                                    </h4>
+                                    <a href="#" class="btn btn-xs">İndi al <i class="fi-rs-arrow-small-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+              
+                    </div>
+
+                    <div style="display: none;" class="slider-arrow hero-slider-1-arrow"></div>
+                </div>
+            </div>
+        </section>
+        
+     
+        <!--Products Tabs-->
+          <!-- faq section start??? -->
+          <div class="container pt-30 pb-30">
             <div id="Faq" style="text-align: center;">
                 <p>Tez-Tez Verilən <span style="color: #29A56C;">Suallar</span></p>
             </div>
@@ -863,6 +1181,62 @@
         </div>
 
         <!-- faq section end -->
+
+        <!-- blog section start -->
+        <div class="container pb-30 pt-30 ">
+                    <div >
+                        <div class="shop-product-fillter mb-50">
+                            <div class="totall-product">
+                                <h2 class="deal-bottomm">
+                                  
+                                    Bloq
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="loop-grid">
+                            <div class="container">
+                                {% for blog in blogs %}
+                                <article class="text-center hover-up mb-30 animated wow animate__animated animate__fadeIn d-flex ">
+                                    <div class="post-thumb ">
+                                        <a href="#">
+                                            <img style="max-height: 300px;" class="border-radius-15" src="{{blog.image.url}}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="entry-content-2">
+                                        {% if blog.subject.name %}
+                                        
+                                        <div class="entry-meta font-xs color-grey mt-10 pb-10">
+                                            <div>
+                                                <span class="post-on mr-10">{{blog.created_at}}</span>
+                                                <span class="hit-count has-dot mr-10">{{blog.views}} oxuma</span>
+                                            </div>
+                                        </div>
+                                        <h4 class="post-title mb-15">
+                                            <a href="#">{{blog.title}}</a>
+                                        </h4>
+                                        <h6 class="mb-10 font-sm "><a class="entry-meta text-muted post-title "
+                                            href="#"><span>{{blog.subject.name}}</span></a></h6>{% endif %}
+                                       
+                                        
+                                    </div>
+                                  
+                                </article>
+                              
+                                <hr  style="color: #333; 
+                                background-color: #333; 
+                                height: 2px;
+                                margin: 20px 0;">
+                                {% endfor %}
+                             
+                            </div>
+                        </div>
+                        <div class="deal-bottomm">
+                            <a href="{% url 'blog' %}" class="btn hover-up">Daha ətraflı...</a>
+                        </div>
+                    </div>
+        </div>
+        <!-- blog section end? -->
+      
     </main>
 
 
